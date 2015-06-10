@@ -3,18 +3,13 @@
 <body>
 
 <?php
-$str = 'one,two,three,four';
-
-// zero limit
-print_r(explode(',',$str,0));
-print "<br>";
-
-// positive limit
-print_r(explode(',',$str,2));
-print "<br>";
-
-// negative limit
-print_r(explode(',',$str,-1));
+$myfile = fopen("\data\alice.csv", "r") ;
+//or die("Unable to open file!");
+// Output one line until end-of-file
+while(!feof($myfile)) {
+  echo fgets($myfile) . "<br>";
+}
+fclose($myfile);
 ?>  
 
 </body>

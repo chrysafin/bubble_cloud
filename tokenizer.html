@@ -7,7 +7,11 @@ $myfile = fopen("\data\alice.csv", "r") ;
 //or die("Unable to open file!");
 // Output one line until end-of-file
 while(!feof($myfile)) {
-  echo fgets($myfile) . "<br>";
+
+$v_line = echo fgets($myfile) . "<br>";
+$keywords = preg_split("/[\s,]+/",$v_line );
+print_r($keywords);
+
 }
 fclose($myfile);
 ?>  
